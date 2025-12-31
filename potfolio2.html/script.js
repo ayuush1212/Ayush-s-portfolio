@@ -87,6 +87,35 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Contact form handling
+  const contactForm = document.getElementById('contact-form');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+        timestamp: new Date().toISOString()
+      };
+
+      // Store in localStorage (for demo purposes)
+      let submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+      submissions.push(formData);
+      localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
+
+      // Show success message
+      alert('Thank you for your message! I will get back to you soon.');
+      
+      // Reset form
+      contactForm.reset();
+    });
+  }
+
   // Animate elements on scroll
   const observerOptions = {
     threshold: 0.1,
