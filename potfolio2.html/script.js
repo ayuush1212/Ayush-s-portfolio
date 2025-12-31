@@ -163,3 +163,4 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('%c👋 Hello! Thanks for checking out my portfolio!', 'font-size: 16px; font-weight: bold; color: #0ea5e9;');
   console.log('%cBuilt with pure HTML, CSS, and JavaScript', 'font-size: 14px; color: #6b7280;');
 });
+
